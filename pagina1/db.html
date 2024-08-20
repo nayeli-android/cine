@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexión a la Base de Datos</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h2>Conexión a la Base de Datos MySQL con PHP</h2>
+    <pre>
+<code>&lt;?php
+$host = 'localhost'; // o el nombre de tu servidor
+$db = 'marketplace_db';
+$user = 'root'; // tu usuario de MySQL
+$pass = ''; // tu contraseña de MySQL
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'Conexión fallida: ' . $e-&gt;getMessage();
+}
+?&gt;</code>
+    </pre>
+</body>
+</html>
